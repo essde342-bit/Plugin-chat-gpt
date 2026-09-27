@@ -1,0 +1,18 @@
+name: Talismans
+version: 1.0.0
+main: ru.essde342.talismans.TalismansPlugin
+api-version: '1.21'
+author: essde342
+description: Two enchanted totem talismans with attribute bonuses.
+
+commands:
+  talisman:
+    description: Gives custom talismans.
+    usage: /talisman give <player> <vigor|war>
+    aliases: [talismans]
+    permission: talismans.admin
+
+permissions:
+  talismans.admin:
+    description: Allows the use of /talisman give.
+    default: op
