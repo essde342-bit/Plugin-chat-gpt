@@ -80,8 +80,33 @@ public final class TalismansPlugin extends JavaPlugin {
         addModifier(meta, Attribute.ATTACK_DAMAGE, type.id() + "_damage",
                 type.attackDamageBonus(), hand);
 
+        addModifier(meta, Attribute.ATTACK_SPEED, type.id() + "_attack_speed",
+                type.attackSpeedBonus(), hand, AttributeModifier.Operation.MULTIPLY_SCALAR);
+
         item.setItemMeta(meta);
         return item;
+    }
+
+    private void addModifier(
+            ItemMeta meta,
+            Attribute attribute,
+            String id,
+            double amount,
+            EquipmentSlotGroup slotGroup,
+            AttributeModifier.Operation operation
+    ) {
+        if (amount == 0.0) {
+            return;
+        }
+
+        AttributeModifier modifier = new AttributeModifier(
+                new NamespacedKey(this, id),
+                amount,
+                operation,
+                slotGroup
+        );
+
+        meta.addAttributeModifier(attribute, modifier);
     }
 
     private void addModifier(
