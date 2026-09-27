@@ -65,8 +65,8 @@ public final class TalismansPlugin extends JavaPlugin {
                 type.id()
         );
 
-        // A talisman is active while held in either hand.
-        EquipmentSlotGroup hand = EquipmentSlotGroup.HAND;
+        // Talismans are active only while held in the off-hand (left hand).
+        EquipmentSlotGroup hand = EquipmentSlotGroup.OFF_HAND;
 
         addModifier(meta, Attribute.MAX_HEALTH, type.id() + "_health",
                 type.healthBonus(), hand);
