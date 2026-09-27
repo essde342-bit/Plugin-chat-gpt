@@ -75,13 +75,13 @@ public final class TalismansPlugin extends JavaPlugin {
                 type.armorBonus(), hand);
 
         addModifier(meta, Attribute.ARMOR_TOUGHNESS, type.id() + "_toughness",
-                type.armorToughnessBonus(), hand);
+                type.armorToughnessBonus(), hand, AttributeModifier.Operation.ADD_SCALAR);
 
         addModifier(meta, Attribute.ATTACK_DAMAGE, type.id() + "_damage",
                 type.attackDamageBonus(), hand);
 
         addModifier(meta, Attribute.ATTACK_SPEED, type.id() + "_attack_speed",
-                type.attackSpeedBonus(), hand, AttributeModifier.Operation.MULTIPLY_SCALAR);
+                type.attackSpeedBonus(), hand, AttributeModifier.Operation.MULTIPLY_SCALAR_1);
 
         item.setItemMeta(meta);
         return item;
