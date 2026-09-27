@@ -5,23 +5,36 @@ import net.kyori.adventure.text.format.NamedTextColor;
 public enum TalismanType {
     VIGOR(
             "vigor",
-            "Талисман Жизненной силы",
+            "[⭑] Талисман Жизненной силы",
             "+4 сердца | −3 брони. Только во второй руке.",
             NamedTextColor.GREEN,
             4 * 2.0,
             -3.0,
             0.0,
+            0.0,
             0.0
     ),
     WAR(
             "war",
-            "Талисман Воина",
+            "[⭑] Талисман Воина",
             "+3 урона | +2 твёрдости брони | +2 сердца. Только во второй руке.",
             NamedTextColor.RED,
             2 * 2.0,
             0.0,
             2.0,
-            3.0
+            3.0,
+            0.0
+    ),
+    PHOENIX(
+            "phoenix",
+            "[⭑] Талисман Феникса",
+            "+4 сердца | +3 урона | +15% твёрдости брони | +15% скорости атаки. Только во второй руке.",
+            NamedTextColor.GOLD,
+            4 * 2.0,
+            0.0,
+            0.15,
+            3.0,
+            0.15
     );
 
     private final String id;
@@ -32,6 +45,7 @@ public enum TalismanType {
     private final double armorBonus;
     private final double armorToughnessBonus;
     private final double attackDamageBonus;
+    private final double attackSpeedBonus;
 
     TalismanType(
             String id,
@@ -41,7 +55,8 @@ public enum TalismanType {
             double healthBonus,
             double armorBonus,
             double armorToughnessBonus,
-            double attackDamageBonus
+            double attackDamageBonus,
+            double attackSpeedBonus
     ) {
         this.id = id;
         this.displayName = displayName;
@@ -51,6 +66,7 @@ public enum TalismanType {
         this.armorBonus = armorBonus;
         this.armorToughnessBonus = armorToughnessBonus;
         this.attackDamageBonus = attackDamageBonus;
+        this.attackSpeedBonus = attackSpeedBonus;
     }
 
     public String id() {
@@ -83,6 +99,10 @@ public enum TalismanType {
 
     public double attackDamageBonus() {
         return attackDamageBonus;
+    }
+
+    public double attackSpeedBonus() {
+        return attackSpeedBonus;
     }
 
     public static TalismanType fromId(String id) {
