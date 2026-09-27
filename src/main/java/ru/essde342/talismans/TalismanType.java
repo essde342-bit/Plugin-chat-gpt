@@ -6,7 +6,7 @@ public enum TalismanType {
     VIGOR(
             "vigor",
             "Талисман Жизненной силы",
-            "§a+4 сердца §7| §c−3 брони",
+            "+4 сердца | −3 брони",
             NamedTextColor.GREEN,
             4 * 2.0,
             -3.0,
@@ -16,7 +16,7 @@ public enum TalismanType {
     WAR(
             "war",
             "Талисман Воина",
-            "§c+3 урона §7| §b+2 твёрдости брони §7| §a+2 сердца",
+            "+3 урона | +2 твёрдости брони | +2 сердца",
             NamedTextColor.RED,
             2 * 2.0,
             0.0,
