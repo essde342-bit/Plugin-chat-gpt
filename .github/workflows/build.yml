@@ -26,3 +26,11 @@ jobs:
 
       - name: Build
         run: gradle build
+
+
+      - name: Upload plugin JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: Talismans-1.0.0
+          path: build/libs/Talismans-1.0.0.jar
+          if-no-files-found: error
